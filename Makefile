@@ -4,6 +4,8 @@ LDFLAGS=-L /usr/lib32 -m32 -no-pie
 NASM=nasm
 NASMFLAGS=-Xgnu -f elf32 -g -F dwarf -Wall
 
+all: test taschenrechner_test
+
 %.o: %.asm Makefile
 	$(NASM) $(NASMFLAGS) $< -o $@
 
@@ -18,6 +20,6 @@ clean:
 	rm -f test tests/main.o tests/registers.o taschenrechner/rechner.o taschenrechner_test
 
 taschenrechner_test: tests/registers.o tests/main.o taschenrechner/rechner.o Makefile
-	$(CXX) $(CXXLFAGS) $(LDFLAGS) $(LDLIBS) -o taschenrechner_test tests/registers.o tests/main.o taschenrechner/rechner.o
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LDLIBS) -o taschenrechner_test tests/registers.o tests/main.o taschenrechner/rechner.o
 
-.PHONY: clean
+.PHONY: clean all
