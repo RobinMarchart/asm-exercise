@@ -1,3 +1,4 @@
 /test
 *.o
 .ccls-cache
+/taschenrechner_test
