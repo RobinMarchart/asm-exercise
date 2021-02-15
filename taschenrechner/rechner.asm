@@ -1,15 +1,18 @@
 
+    section .rodata
+    ;; read only non executable data
+    
     section .data
-
+    ;;writable non executable data
+    
+    section .text
+    ;; read only executable data
     global rechner_const_asm
     global rechner_add_asm
     global rechner_sub_asm
     global rechner_mul_asm
-    global rechner_div_asm
     global rechner_sel_asm
-
-section .text
-
+    
 rechner_const_asm:
     ;; TODO implement const
     
