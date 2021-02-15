@@ -1,5 +1,5 @@
 
-CXXFLAGS=-no-pie -std=c++11 -fno-pic -m32 -Wall -gdwarf -Og
+CXXFLAGS=-no-pie -std=c++11 -fno-pic -m32 -Wall -gdwarf -Og -march=native
 LDFLAGS=-L /usr/lib32 -m32 -no-pie
 NASM=nasm
 NASMFLAGS=-Xgnu -f elf32 -g -F dwarf -Wall
