@@ -16,7 +16,9 @@ jobs:
       name: install 32bit gcc
       with:
         platform: x32
+    - name: Set up NASM
+      uses: ilammy/setup-nasm@v1.2.0
     - name: make
-      run: make
+      run: make -j
     - name: test
       run: ./test
