@@ -12,6 +12,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: prepare solution
       run: cp -r beispiel_lösung/* ./
+    - name: install 32bit gcc
+      run: apt install gcc-multilib
     - name: make
       run: make
     - name: test
